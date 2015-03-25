@@ -26,6 +26,31 @@ $(window).load(function () {
                     $('#log').animate({ scrollTop: $('#log')[0].scrollHeight}, 500);
                 };
 
+            // Default answers bank
+            var neutral = ['Je ne sais pas quoi dire.', 
+                            'Je n\'aime pas trop cette question.', 
+                            'C\'est à cause de questions comme ça que des chatons dorment dehors.', 
+                            'Tout ce que je sais, c\'est que l\'hivers arrive',
+                            'Demande-moi plus tard',
+                            'Oui, presque.',
+                            'Absolument pas.',
+                            'J\'en doute.',
+                            'C\'est certain',
+                            'Tu en penses quoi ?'],
+                numeric = ['42',
+                            'Beaucoup',
+                            'J\'ai perdu le compte',
+                            'Pas tant que ça',
+                            'Un peu',
+                            'Pas mal',
+                            'Une infinité',
+                            'Une douzaine. Plus ou moins.' ],
+                why = ['Demande à ta mère',
+                        'Demande à ton père',
+                        'Parce que.',
+                        'Pourquoi pas ?',
+                        'Ca dépend'];
+
             // Funny form validation
             if(query != ''){
                 question += query;
@@ -70,7 +95,22 @@ $(window).load(function () {
                 break;
 
                 default:
-                    reply += 'Je ne sais pas quoi dire.'
+                    var type = query.trim().toLowerCase().split(" ")[0];
+                    if(type === "combien"){
+                        var top = numeric.length,
+                            random = Math.floor(Math.random() * top) + 1;
+                            reply += numeric[random];
+                    }
+                    else if(type === "pourquoi"){
+                        var top = why.length,
+                            random = Math.floor(Math.random() * top) + 1;
+                            reply += why[random];
+                    }
+                    else{
+                        var top = neutral.length,
+                            random = Math.floor(Math.random() * top) + 1;
+                            reply += neutral[random];
+                    }
             }
 
             // Append the question, disable the form
