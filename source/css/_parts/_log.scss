@@ -5,7 +5,8 @@
 	@include border-radius(4px);
 	margin-bottom:30px;
 	max-height:400px;
-	overflow:auto;
+	overflow-x:hidden;
+	overflow-y:auto;
 	@include transition(all 300ms ease-out);
 	p{
 		padding:5px 30px 7px 30px;
