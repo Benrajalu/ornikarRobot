@@ -9,8 +9,13 @@ $(window).load(function () {
 
     (function(){
         $('#queries').submit(function(event){
+            // Prevent submit
             event.preventDefault();
+
+            // Stock targets and variables
+
             var query = $('#question').val(),
+                button = $(this).find('button[type="submit"]'),
                 question = '<p class="me"><span>Me: </span> ',
                 reply = '<p class="him new"><span>John Snow:</span> ',
                 typing = '<p class="him" id="typing"><span>John Snow:</span> <span class="dot one" /> <span class="dot two" /> <span class="dot three" /></p>',
@@ -20,12 +25,15 @@ $(window).load(function () {
                     $('#log').animate({ scrollTop: $('#log')[0].scrollHeight}, 500);
                 };
 
+            // Funny form validation
             if(query != ''){
                 question += query;
             }
             else{
                 question += '...';
             }
+
+            // Answer pool
             switch(query.replace(/\?/g,'').replace(/\-/g,' ').trim().toLowerCase()){
 
                 case '': 
@@ -52,24 +60,35 @@ $(window).load(function () {
                     reply += ':\'(';
                 break;
 
+                case 'suis je le maitre du monde':
+                    reply += 'Je ne répondrais qu\'en présence de mon avocat.';
+                break;
+
+                case 'qui est la plus belle':
+                    reply += 'C\'est ma maman.';
+                break;
+
                 default:
                     reply += 'Je ne sais pas quoi dire.'
             }
 
+            // Append the question, disable the form
             $(log).append(question);
-            $('#question').attr('disabled', 'disabled');
+            $(button).attr('disabled', 'disabled');
             scroll();
 
+            // Simulate John's thinking to fake human interaction
             setTimeout(function(){
                  $(log).append(typing);
                 scroll();
             }, 500);
 
+            // Append John's answer and enable the form again
             setTimeout(function(){
                 document.getElementById('queries').reset();
                 $('#typing').remove();
                 $(log).append(reply);
-                $('#question').removeAttr('disabled').focus();
+                $(button).removeAttr('disabled');
                 scroll();
             }, 1500);
 

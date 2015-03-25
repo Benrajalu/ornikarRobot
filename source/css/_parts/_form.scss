@@ -1,27 +1,28 @@
 #queries{
 	position:relative;
 	padding-right:40px;
-	input{
-		@include transition(all 300ms ease-out);
+	input, button{
+		@include transition(all 150ms ease-out);
 		&[type="text"]{
 			display:block;
 			width:100%;
-			padding:0 5px;
+			padding:0 10px;
 			height:40px;
 			background:$white;
 			border:1px solid $black;
 			line-height: 40px;
 			border-right:0px;
-			@include light(14px, $black);
+			@include light(12px, $black);
 			&:focus{
 				outline:0;
 				border-color: $green;
-				&+ input{
+				&+ button{
 					border-color:$green;
 				}
 			}
 		}
 		&[type="submit"]{
+			-webkit-appearance: none;
 			display:block;
 			position:absolute;
 			right:0px;
@@ -31,7 +32,29 @@
 			width:40px;
 			background:$green;
 			border:1px solid $black;
+			border-left:0px;
 			@include bold(12px, $white);
+			&:active{
+				@include transform(rotateX(-30deg) translateY(-2px));
+				&:after{
+					height:6px;
+					@include transform(rotateX(30deg));
+				}
+			}
+			&:focus{
+				outline:0;
+			}
+			&:after{
+				height:0px;
+				width:100%;
+				content:"";
+				background:$black;
+				display:block;
+				position:absolute;
+				left:0px;
+				top:100%;
+				@include transition(all 150ms ease-out);
+			}
 		}
 	}
 }
