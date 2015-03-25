@@ -49,7 +49,7 @@ $(window).load(function () {
                         'Demande à ton père',
                         'Parce que.',
                         'Pourquoi pas ?',
-                        'Ca dépend'];
+                        'Ça dépend'];
 
             // Funny form validation
             if(query != ''){
