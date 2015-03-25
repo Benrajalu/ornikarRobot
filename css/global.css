@@ -196,12 +196,13 @@ body, html {
   border-radius: 4px;
   margin-bottom: 30px;
   max-height: 400px;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   -webkit-transition: all 300ms ease-out;
   -moz-transition: all 300ms ease-out;
   -o-transition: all 300ms ease-out;
   transition: all 300ms ease-out; }
-  /* line 10, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
+  /* line 11, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
   #log p {
     padding: 5px 30px 7px 30px;
     font-family: 'regular', sans-serif;
@@ -211,28 +212,28 @@ body, html {
     animation-duration: 500ms;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both; }
-    /* line 17, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
+    /* line 18, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
     #log p span {
       display: block;
       line-height: 15px;
       font-family: "bold"; }
-    /* line 23, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
+    /* line 24, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
     #log p.him span {
       color: #4ab989; }
-    /* line 26, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
+    /* line 27, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
     #log p.him:not(.new) {
       -webkit-animation-name: fadeInLeft;
       animation-name: fadeInLeft; }
-    /* line 31, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
+    /* line 32, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
     #log p.me {
       text-align: right;
       background: rgba(61, 61, 61, 0.1);
       -webkit-animation-name: fadeInRight;
       animation-name: fadeInRight; }
-      /* line 36, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
+      /* line 37, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
       #log p.me span {
         color: #525252; }
-    /* line 41, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
+    /* line 42, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
     #log p span.dot {
       display: inline-block;
       width: 3px;
@@ -251,11 +252,11 @@ body, html {
       border-radius: 100%;
       animation: dots 300ms  ease-out 300ms infinite alternate;
       -webkit-animation: dots 300ms  ease-out 300s infinite alternate; }
-      /* line 52, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
+      /* line 53, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
       #log p span.dot.two {
         animation-delay: 400ms;
         -webkit-animation-delay: 400ms; }
-      /* line 56, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
+      /* line 57, /Users/benrajalu/Dropbox/Applications/ornikarRobot/source/css/_parts/_log.scss */
       #log p span.dot.three {
         animation-delay: 500ms;
         -webkit-animation-delay: 500ms; }
