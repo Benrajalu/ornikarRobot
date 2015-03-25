@@ -98,17 +98,17 @@ $(window).load(function () {
                     var type = query.trim().toLowerCase().split(" ")[0];
                     if(type === "combien"){
                         var top = numeric.length,
-                            random = Math.floor(Math.random() * top) + 1;
+                            random = Math.floor(Math.random() * top);
                             reply += numeric[random];
                     }
                     else if(type === "pourquoi"){
                         var top = why.length,
-                            random = Math.floor(Math.random() * top) + 1;
+                            random = Math.floor(Math.random() * top);
                             reply += why[random];
                     }
                     else{
                         var top = neutral.length,
-                            random = Math.floor(Math.random() * top) + 1;
+                            random = Math.floor(Math.random() * top);
                             reply += neutral[random];
                     }
             }
