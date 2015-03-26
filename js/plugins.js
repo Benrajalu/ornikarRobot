@@ -1,7 +1,4 @@
-/*global jQuery:false */
-/*global Modernizr:false */
-/*global console:false */
-/*global confirm:false */
+/*global $:false */
 
 'use strict';
 
@@ -20,7 +17,7 @@ $(window).load(function () {
                 question = '<p class="me"><span>Me: </span> ',
                 reply = '<p class="him new"><span>John Snow:</span> ',
                 typing = '<p class="him" id="typing"><span>John Snow:</span> <span class="dot one" /> <span class="dot two" /> <span class="dot three" /></p>',
-                log = $("#log"), 
+                log = $('#log'), 
                 hardSell = 'Je n\'en sais rien, mais clairement c\'est lui qu\'il vous faut.',
                 scroll = function(){
                     $('#log').animate({ scrollTop: $('#log')[0].scrollHeight}, 500);
@@ -52,7 +49,7 @@ $(window).load(function () {
                         'Ça dépend'];
 
             // Funny form validation
-            if(query != ''){
+            if(query !== ''){
                 question += query;
             }
             else{
@@ -95,21 +92,23 @@ $(window).load(function () {
                 break;
 
                 default:
-                    var type = query.trim().toLowerCase().split(" ")[0];
-                    if(type === "combien"){
-                        var top = numeric.length,
-                            random = Math.floor(Math.random() * top);
-                            reply += numeric[random];
+                    var type = query.trim().toLowerCase().split(' ')[0],
+                        top,
+                        random;
+                    if(type === 'combien'){
+                        top = numeric.length,
+                        random = Math.floor(Math.random() * top);
+                        reply += numeric[random];
                     }
-                    else if(type === "pourquoi"){
-                        var top = why.length,
-                            random = Math.floor(Math.random() * top);
-                            reply += why[random];
+                    else if(type === 'pourquoi'){
+                        top = why.length,
+                        random = Math.floor(Math.random() * top);
+                        reply += why[random];
                     }
                     else{
-                        var top = neutral.length,
-                            random = Math.floor(Math.random() * top);
-                            reply += neutral[random];
+                        top = neutral.length,
+                        random = Math.floor(Math.random() * top);
+                        reply += neutral[random];
                     }
             }
 
